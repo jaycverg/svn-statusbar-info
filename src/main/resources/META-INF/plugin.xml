@@ -1,28 +1,16 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>com.jaycverg.svn-statusbar-widget</id>
-
-    <!-- Public plugin name should be written in Title Case.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>svn-statusbar-widget</name>
-
-    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="jaycverg@gmail.com" url="https://www.intac.tech">intac.tech</vendor>
-
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <name>SVN Status Bar Widget</name>
+    <vendor email="jaycverg@gmail.com" url="https://github.com/jaycverg/svn-statusbar-info">
+        Maintained by Jayrome
+    </vendor>
     <description><![CDATA[
     A statusbar widget that shows the current SVN relative path
-  ]]></description>
+    ]]></description>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <statusBarWidgetFactory id="svn-relative-path"
                                 implementation="com.jaycverg.svnstatusbarwidget.SvnRelativePathStatusBarWidgetFactory"/>
