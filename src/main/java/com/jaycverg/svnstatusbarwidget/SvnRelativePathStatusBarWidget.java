@@ -68,7 +68,7 @@ public class SvnRelativePathStatusBarWidget extends TextPanel implements CustomS
     private String getSvnInfo(String basePath) {
         try {
             var projDir = Paths.get(basePath).toFile();
-            var proc = new ProcessBuilder("svn", "info")
+            var proc = new ProcessBuilder("/opt/homebrew/bin/svn", "info")
                     .directory(projDir)
                     .start();
 
@@ -78,7 +78,8 @@ public class SvnRelativePathStatusBarWidget extends TextPanel implements CustomS
                         .findFirst()
                         .orElse("")
                         .split(":");
-                return info.length > 0 ? info[1].trim() : "";
+                var path = info.length > 1 ? info[1].trim().substring(2) : "SVN Project";
+                return "[" + path + "]";
             }
         } catch (IOException e) {
             System.out.println("Failed to get the SVN info. SVN cli may not be installed.");
