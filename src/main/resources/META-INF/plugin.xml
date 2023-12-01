@@ -10,6 +10,7 @@
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>Subversion</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <statusBarWidgetFactory id="svn-relative-path"
